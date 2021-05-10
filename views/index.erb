@@ -1,0 +1,23 @@
+<h1>This is an amazing app</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a>
+      -
+      <%= restaurant.city %>
+    </li>
+  <% end %>
+</ul>
+
+<p>Create a new resto</p>
+
+<form action="/restaurants" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name">
+
+  <label for="city">City</label>
+  <input type="text" name="city">
+
+  <input type="submit">
+</form>
